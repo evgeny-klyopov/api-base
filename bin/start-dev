@@ -1,0 +1,3 @@
+#!/bin/bash
+#gin -p 4001 -a 4000 run main.go
+gin -p 8181 -a 8180 run main.go

@@ -1,0 +1,19 @@
+[Unit]
+Description=api service
+ConditionPathExists=/var/www/projects/api/backend/
+After=network.target
+ 
+[Service]
+Type=simple
+
+Restart=on-failure
+RestartSec=10
+startLimitIntervalSec=60
+
+WorkingDirectory=/var/www/projects/api/backend/
+ExecStart=/var/www/projects/api/backend/main --name=foo
+
+SyslogIdentifier=api
+ 
+[Install]
+WantedBy=multi-user.target
