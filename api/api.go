@@ -44,10 +44,6 @@ func (a *Api) apiV1(rg *gin.RouterGroup) {
 		[]service.Controller{
 			v1.NewAuth(a.Service),
 			v1.NewPosts(a.Service),
-			//v1.NewCalculator(a.Service),
-			//v1.NewConsultation(a.Service),
-			//v1.NewFaq(a.Service),
-			//v1.NewWarehouse(a.Service),
 		},
 	)
 }
