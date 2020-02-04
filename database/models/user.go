@@ -3,7 +3,6 @@ package models
 import (
 	"api-base/lib/common"
 	"github.com/jinzhu/gorm"
-	"io/ioutil"
 	"os"
 	"time"
 
@@ -56,14 +55,7 @@ func GenerateToken(data common.JSON) (string, error) {
 		"exp":  date.Unix(),
 	})
 
-	// get path from root dir
-	pwd, _ := os.Getwd()
-	keyPath := pwd + "/jwtsecret.key"
-
-	key, readErr := ioutil.ReadFile(keyPath)
-	if readErr != nil {
-		return "", readErr
-	}
+	key := []byte(os.Getenv("JWT_SECRET"))
 	tokenString, err := token.SignedString(key)
 	return tokenString, err
 }

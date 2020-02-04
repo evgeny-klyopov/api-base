@@ -11,7 +11,7 @@ RestartSec=10
 startLimitIntervalSec=60
 
 WorkingDirectory=/var/www/projects/api/backend/
-ExecStart=/var/www/projects/api/backend/main --name=foo
+ExecStart=/var/www/projects/api/backend/api-base --name=foo
 
 SyslogIdentifier=api
  

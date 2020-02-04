@@ -5,7 +5,9 @@
 *.so
 *.dylib
 
-!gin-bin.exe
+main
+
+.env
 
 # Test binary, built with `go test -c`
 *.test
